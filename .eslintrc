@@ -1,0 +1,84 @@
+{
+  "env": {
+    "node": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:node/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": ["./tsconfig.json"], // Specify it only for TypeScript files
+        "tsconfigRootDir": "."
+      }
+    }
+  ],
+  "settings": {
+    "node": {
+      "tryExtensions": [".js", ".json", ".node", ".ts"]
+    },
+    "import/extensions": [".js", ".ts"],
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts"]
+    },
+    "import/resolver": {
+      "typescript": {},
+      "node": {
+        "extensions": [".js", ".ts"]
+      }
+    }
+  },
+  "plugins": ["simple-import-sort", "import", "node"],
+  "ignorePatterns": ["temp.js", "**/vendor/*.js"],
+  "rules": {
+    "sort-imports": "off",
+    "import/order": "off",
+    "no-undef": "off",
+    "no-fallthrough": "off",
+    "no-use-before-define": "off",
+    "no-redeclare": "off",
+    "node/no-callback-literal": "off",
+    "@typescript-eslint/no-redeclare": "error",
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "import/first": "error",
+    "import/newline-after-import": "error",
+    "@typescript-eslint/no-use-before-define": [
+      "error",
+      {
+        "functions": false,
+        "variables": false
+      }
+    ],
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "args": "after-used",
+        "ignoreRestSiblings": true,
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "prettier/prettier": "error",
+    "@typescript-eslint/no-var-requires": "off",
+    "node/no-unsupported-features/es-syntax": [
+      "error",
+      { "ignores": ["modules"] }
+    ],
+    "node/no-missing-import": ["error", {
+      "allowModules": [],
+      "resolvePaths": ["src"],
+      "tryExtensions": [".ts", ".tsx", ".js", ".jsx", ".json", ".node"]
+    }]
+  }
+}
