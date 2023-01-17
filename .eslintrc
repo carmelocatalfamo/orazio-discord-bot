@@ -39,7 +39,7 @@
     }
   },
   "plugins": ["simple-import-sort", "import", "node"],
-  "ignorePatterns": ["temp.js", "**/vendor/*.js"],
+  "ignorePatterns": ["temp.js", "**/vendor/*.js", "dist/**/*"],
   "rules": {
     "sort-imports": "off",
     "import/order": "off",
@@ -75,10 +75,13 @@
       "error",
       { "ignores": ["modules"] }
     ],
-    "node/no-missing-import": ["error", {
-      "allowModules": [],
-      "resolvePaths": ["src"],
-      "tryExtensions": [".ts", ".tsx", ".js", ".jsx", ".json", ".node"]
-    }]
+    "node/no-missing-import": [
+      "error",
+      {
+        "allowModules": [],
+        "resolvePaths": ["src"],
+        "tryExtensions": [".ts", ".tsx", ".js", ".jsx", ".json", ".node"]
+      }
+    ]
   }
 }
