@@ -2,9 +2,10 @@ import { Readable } from 'stream'
 import ytStream from 'yt-stream'
 
 export interface YoutubeVideo {
-  title: string
   author: string
   stream: Readable
+  title: string
+  url: string
 }
 
 export const getYoutubeVideoFromString = async (
@@ -33,8 +34,9 @@ export const getYoutubeVideoFromString = async (
   })
 
   return {
-    title,
     author,
     stream,
+    title,
+    url: videoURL,
   }
 }

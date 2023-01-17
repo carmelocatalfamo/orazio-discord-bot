@@ -4,6 +4,9 @@
 # Production
 /dist
 
+# Database
+database.sqlite
+
 # Misc
 .env
 .DS_Store
