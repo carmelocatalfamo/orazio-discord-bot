@@ -1,28 +1,35 @@
 # Orazio
 
+Discord music bot that streams music from YouTube
+
 ## Development setup
 
 Clone repo
+
 ```bash
 git clone git@github.com:carmelocatalfamo/orazio-discord-bot.git
 ```
 
 Install dependencies
+
 ```bash
 cd orazio-discord-bot && npm install
 ```
 
 Copy env file
+
 ```bash
 cp .example.env .env
 ```
 
 Start development server
+
 ```bash
 npm run dev
 ```
 
 Generate URL to invite bot on your server. This command will print the invite URL.
+
 ```bash
 npm run invite
 ```
