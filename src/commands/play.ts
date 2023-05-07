@@ -48,6 +48,17 @@ export const Play: Command = {
         throw new Error("Compare, ha 'ntrasiri 'nto canali BAAAABBU")
       }
 
+      const isSpotify = query.includes('open.spotify.com')
+
+      if (isSpotify) {
+        // const isPlaylist = query.includes('playlist')
+        // const isTrack = query.includes('track')
+
+        return await interaction.followUp({
+          content: `Spotify not supported`,
+        })
+      }
+
       // Get video from YouTube by `query`
       const youtubeVideo = await getYoutubeVideoFromString(query)
       // Check if a song is playing
